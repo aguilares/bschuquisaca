@@ -1,0 +1,534 @@
+GET http://localhost:9000/public/usuarioExiste HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"dnaskjsasdd",
+}
+
+###
+POST http://localhost:3001/paciente/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre":"WYLLI",
+    "apellidoPaterno":"FERNANDEX",
+    "apellidoMaterno":"LOERA",
+    "ci":6766333,
+    "fechaNac":"2022-09-28",
+    "sexo":"M",
+    "telefono":56333,
+    "direccion":"MEXICO TIJUANA",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+POST  http://localhost:3001/verificar HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjMxMTYyMjUzLCJleHAiOjE2MzE3NjcwNTN9.YY4exh5fVu8b_D02fcmqNl0DYvMV1TagkKgcZRroHyE
+
+
+###
+PUT http://localhost:3001/paciente/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":1,
+    "nombre":"FANNY",
+    "apellidoPaterno":"MORALES",
+    "apellidoMaterno":"PUMA",
+    "ci":56211112,
+    "fechaNac":"2022-09-28",
+    "sexo":"F",
+    "telefono":56333,
+    "direccion":"sucre bolivia",
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/paciente/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 4
+}
+###
+GET http://localhost:3001/usuario/all HTTP/1.1
+
+###
+POST http://localhost:3001/usuario/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "idServicio":7,
+    "idRol":2,
+    "username":"guido",
+    "pass":"1234",
+    "nombre":"javier",
+    "apellidoPaterno":"flores",
+    "apellidoMaterno":"pinto",
+    "telefono":56333,
+    "direccion":"sucre bolivia",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+GET http://localhost:3001/usuario/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"laboratorista"
+}
+###
+PUT http://localhost:3001/usuario/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":2,
+    "idServicio":7,
+    "idRol":2,
+    "pass":"1111",
+    "nombre":"victor",
+    "apellidoPaterno":"cervants",
+    "apellidoMaterno":"andrade",
+    "telefono":56333,
+    "direccion":"sucre z/facueldar de medicina ",
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/usuario/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 8
+}
+###
+GET http://localhost:3001/rol/all HTTP/1.1
+
+###
+POST http://localhost:3001/rol/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre":"laboratorista",
+    "numero": 3,
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+GET http://localhost:3001/rol/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"laboratorista"
+}
+###
+
+PUT http://localhost:3001/rol/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":10,
+    "nombre":"laboratorista",
+    "numero":3,
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/rol/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 8
+}
+###
+GET http://localhost:3001/itemservicio/all HTTP/1.1
+
+###
+POST http://localhost:3001/itemservicio/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "idServicio":7,
+    "nombre": "LEOCUGRAMA",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+GET http://localhost:3001/itemservicio/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"EXAMEN  DE COVID-19"
+}
+###
+PUT http://localhost:3001/itemservicio/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":1,
+    "idServicio":7,
+    "nombre": "EXAMEN DE ORINAs",
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/itemservicio/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1
+}
+###
+
+GET http://localhost:3001/servicio/all HTTP/1.1
+
+###
+POST http://localhost:3001/servicio/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "idArea":1,
+    "nombre": "SERVICIO DE HEMOTERAPIA1",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+GET http://localhost:3001/servicio/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"SERVICIOS DE HEMOTERAPIA"
+}
+###
+PUT http://localhost:3001/servicio/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":8,
+    "idArea":1,
+    "nombre": "SERVICIOS DE HEMOTERAPIA",
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/servicio/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 8
+}
+### AREA
+GET http://localhost:3001/area/all HTTP/1.1
+
+###
+POST http://localhost:3001/area/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "CIRUGIA",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+### AREA
+GET http://localhost:3001/area/all HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3001/area/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"SERVICIOS COMPLEMENTARIOS"
+}
+###
+POST  http://localhost:3001/area/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "CIRUGIA",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+PUT http://localhost:3001/area/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":1,
+    "nombre": "SERVICIOS COMPLEMENTARIOS",
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/area/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1
+}
+###
+GET http://localhost:3001/hospitalseguro/all HTTP/1.1
+###
+GET http://localhost:3001/hospitalseguro/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"sus"
+}
+
+###
+POST http://localhost:3001/hospitalseguro/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "idSeguro": 1,
+    "idHospital": 1,
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+
+
+PUT http://localhost:3001/hospitalseguro/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":1,
+    "idSeguro": 2,
+    "idHospital": 1,
+    "modificado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+DELETE  http://localhost:3001/hospitalseguro/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+###SEGUROS
+GET http://localhost:3001/seguro/all HTTP/1.1
+###
+GET http://localhost:3001/seguro/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"SUS"
+}
+
+###
+POST http://localhost:3001/seguro/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "INSTITUCIONAL",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+
+DELETE  http://localhost:3001/seguro/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 2
+}
+###
+
+PUT http://localhost:3001/seguro/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":101,
+    "red": "red 1",
+    "nombre": "HOSPITAL SAN PEDRO CLAVER COSMIL",
+    "telefono": "767222",
+    "direccion": "lajastambo",
+    "modificado":"2022-09-28 16:25:14",
+    "usuario":1
+}
+###
+GET http://localhost:3001/hospital/all HTTP/1.1
+###
+GET http://localhost:3001/hospital/buscar HTTP/1.1
+Content-Type: application/json
+
+{
+    "dato":"HOSPITAL UNIVERSITARIO"
+}
+
+
+
+###
+POST http://localhost:3001/hospital/insertar HTTP/1.1
+Content-Type: application/json
+
+{
+    "red": "red 1",
+    "nombre": "HOSPITAL UNIVERSITARIO",
+    "telefono": "767222",
+    "direccion": "Central sucre",
+    "creado": "2022-09-28 16:25:14",
+    "usuario": 1
+}
+###
+
+DELETE  http://localhost:3001/hospital/borrar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 10
+}
+###
+
+PUT http://localhost:3001/hospital/editar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":10,
+    "red": "red 1",
+    "nombre": "HOSPITAL SAN PEDRO CLAVER COSMIL",
+    "telefono": "767222",
+    "direccion": "lajastambo",
+    "modificado":"2022-09-28 16:25:14",
+    "usuario":1
+}
+###
+POST http://localhost:9000/insert HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjMxMTYyMjUzLCJleHAiOjE2MzE3NjcwNTN9.YY4exh5fVu8b_D02fcmqNl0DYvMV1TagkKgcZRroHyE
+
+{
+    "ci": "13616196",
+    "nombre": "ABRAHAN",
+    "apellido1": "AGUILAR",
+    "apellido2": "TORRES",
+    "sexo": "M",
+    "fechaNac": "1997-08-06",
+    "celular": "7346834",
+    "telefono": "0000",
+    "id_mun": 1,
+    "direccion": "PALACIO TAMB Z/HOSPITAL MUNICIPAL"
+}
+
+
+###
+DELETE http://localhost:9000/eliminar HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjMxMTYyMjUzLCJleHAiOjE2MzE3NjcwNTN9.YY4exh5fVu8b_D02fcmqNl0DYvMV1TagkKgcZRroHyE
+
+{
+    "id":155,
+    "ci": "13616196",
+    "nombre": "ABRAHAN",
+    "apellido1": "AGUILAR",
+    "apellido2": "TORRES",
+    "sexo": "M",
+    "fechaNac": "1997-08-06",
+    "celular": "7346834",
+    "telefono": "0000",
+    "id_mun": 1,
+    "direccion": "PALACIO TAMB Z/HOSPITAL MUNICIPAL"
+}
+
+###
+PUT http://localhost:9000/updated HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjMxMTYyMjUzLCJleHAiOjE2MzE3NjcwNTN9.YY4exh5fVu8b_D02fcmqNl0DYvMV1TagkKgcZRroHyE
+
+{
+    "id":142,
+    "ci": "78726871",
+    "nombre": "WILMER",
+    "apellido1": "AGUILAR",
+    "apellido2": "TORRES",
+    "sexo": "M",
+    "fechaNac": "2001-01-03",
+    "celular": "7346834",
+    "telefono": "0000",
+    "id_mun": 1,
+    "direccion": "PALACION TAMBO Z/INTERNADO"
+}
+
+### 
+POST http://localhost:9000/login HTTP/1.1
+Content-Type: application/json
+###
+
+   
+POST  http://localhost:9000/red/registro HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "nombre":"red 5"
+}
+###
+POST   http://localhost:9000/ HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "user":"gust",
+    "pass":"81dc9bdb52d04dc20036dbd8313ed055"
+}
+
+
+###
+POST   http://localhost:9000/ HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "user":"juan",
+    "pass":"827ccb0eea8a706c4c34a16891f84e7b"
+}
+
+
+###
+POST  http://localhost:9000/red/lista HTTP/1.1        
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXN1YXJpbyI6Imd1c3QiLCJzaXN0ZW1hIjoiU0lTVEVNQSBTRUdMIiwibW9kdWxvIjoiU09MSUNJVFVEIEVYQU1FTkVTIERFIEdBQklORVRFIFkgU09MSUNJVFVEIERFIEVYQU1FTkVTIERFIExBQk9SQVRPUklPIFkgU0VSVklDSU8gREUgU0FOR1JFIFNFR1VSQSIsIm5pdmVsIjozLCJyb2wiOiJFTkNBUkdBRE8gVU5JREFEIERFIFNFUlZJQ0lPIiwiZ2VzdGlvbiI6MjAyMSwicGVyc29uYWwiOiJKVUFOIEpPU0UiLCJhcGVsbGlkbzEiOiJDQUhJV0FSQSIsImFwZWxsaWRvMiI6IlNBTlRPUyIsImFyZWEiOiJBRE1JTklTVFJBQ0lPTiIsInVuaWRhZCI6ImFkbWluaXN0cmF0aXZhIiwiY2VudHJvIjoiU0FOIFBFRFJPIENMQVZFUi0gTEFKQVNUQU1CTyIsImRpc3RyaXRvIjoiRElTVFJJVE8gMiIsIm11bmljaXBpbyI6Ik9ST1BFWkEiLCJyZWQiOiJSRUQgMSBTVUNSRSIsInRpZW1wbyI6MTMsImlhdCI6MTYzNDY4MTU4OCwiZXhwIjoxNjM0NzY3OTg4fQ.2vRZLMVF8aSoBohn-ikus9GgTCpuoNc3jk1VMdBp3jM
+
+{
+  "user":2
+}
+
+###
+POST http://localhost:9000/red/registro HTTP/1.1
+Content-Type: application/json
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVrIjp0cnVlLCJpYXQiOjE2MzIwNzkwMDksImV4cCI6MTYzMjY4MzgwOX0.0AVXKsPDLDsj4Zl2fy2p3FCVPAHQLtFq7pAOIc2r4OY 11
+
+{
+    "user":1,
+    "nombre":"RED"
+}
+
+###
+POST http://localhost:9000/red/actualizar HTTP/1.1
+Content-Type: application/json
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVrIjp0cnVlLCJpYXQiOjE2MzIzNzc0NzksImV4cCI6MTYzMjk4MjI3OX0.5DgZ4wfVLLSfSrETrgJtXQk1Lsmcfz96y2pB80BVdIU
+
+{
+    "id":"2",
+    "nombre":"RED 1 SUCRE"
+}
+
+###
+DELETE  http://localhost:9000/red/eliminar HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVrIjp0cnVlLCJpYXQiOjE2MzIzNzc0NzksImV4cCI6MTYzMjk4MjI3OX0.5DgZ4wfVLLSfSrETrgJtXQk1Lsmcfz96y2pB80BVdIU
+
+{
+    "id":"13"
+}
+
+###
+GET  http://localhost:9000/red/lista HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":"1"
+}
